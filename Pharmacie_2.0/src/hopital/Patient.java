@@ -32,7 +32,7 @@ public class Patient {
 	public Medicament[] getPrescription() {
 		return prescription;
 	}
-
+	
 	public void ajouterMedocAPrescr(Medicament med) {
 		prescription[nbMedoc] = med;
 		nbMedoc++;
@@ -56,12 +56,24 @@ public class Patient {
 		return age;
 	}
 	
+	public String afficherPrescription(Medicament[] prescription) {
+		String ordonnance = "";
+		for(int i = 0; i<prescription.length; i++) {
+			ordonnance += prescription[i].getNom() + " " + prescription[i].getQuantite() + " ";
+		}
+		return ordonnance;
+	}
 	@Override
 	public String toString() {
-		return nom + " " + prenom + " " + age + " " + prescription;
+		return nom + " " + prenom + " " + age + " " + afficherPrescription(prescription);
 	}
 	
 	public static void main(String[] args) {
-		
+		Patient macron;
+		Medicament smecta = new Medicament("Smecta", 20);
+		Medicament doli = new Medicament("Doliprane", 6);
+		Medicament[] prescri = {doli, smecta};
+		macron = new Patient("Macron", "Emmanuel", 45, prescri);
+		System.out.println(macron.toString());
 	}
 }

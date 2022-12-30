@@ -651,20 +651,33 @@ public class Main {
 	public static void addPatient() {
 		String nom = inputOutput("Saisissez le nom du nouveau patient:\n");
 		String prenom = inputOutput("Saisissez le prenom du nouveau patient:\n");
-		int age = Integer.parseInt("Saississez l'age d nouveau patient");
-		int quantite = Integer.parseInt("Saisissez le nombre de medicaments dont a besoin le nouveau patient:\n");
+		int age = Integer.parseInt(inputOutput("Saississez l'age d nouveau patient"));
+		int quantite = Integer.parseInt(inputOutput("Saisissez le nombre de medicaments dont a besoin le nouveau patient:\n"));
 		Medicament[] prescription = new Medicament[50];
+		String ordonnance ="";
 		for(int i = 0; i<quantite; i++) {
-			String name = inputOutput("Saisissez le nom du medicament");
-			int nombre = Integer.parseInt(inputOutput("Saisissez le nombre de medicament qu'il lui faut"));
+			String name = inputOutput("Saisissez le nom du medicament (forme: Nom)");
+			int nombre = Integer.parseInt(inputOutput("Saisissez le dosage de medicament qu'il faut"));
 			Medicament medoc = new Medicament(name, nombre);
 			prescription[i] = medoc;
+			ordonnance += prescription[i].getNom() + " " + prescription[i].getQuantite() + " ";
 			//ajouter les medocs a la pharmacie
-			listeMedoc[nbMedocs] = medoc;
-			quantiteMeds += nombre;
-			nbMedocs++;
+			int trouve = 0;
+			for(int k = 0; k<nbMedocs; k++) {
+				if(listeMedoc[k].getNom() == name) {
+					trouve = 1;
+					listeMedoc[k].setQuantite(listeMedoc[k].getQuantite()+nombre);
+					quantiteMeds += nombre;
+				}
+			} if(trouve == 0) {
+				listeMedoc[nbMedocs] = medoc;
+				nbMedocs ++;
+				quantiteMeds += nombre;
+			}
 		}
+		System.out.println(ordonnance);
 		Patient patient = new Patient(nom, prenom, age, prescription);
+		patient.afficherPrescription(prescription);
 		//ajouter a la liste des patients
 		listePatient[nbPatients] = patient;
 		nbPatients++;
@@ -847,7 +860,8 @@ public class Main {
     }
     
     public static void main(String[] args) {
-    	Medicament doli = new Medicament("Dolipriane", 20);
+    	//initialisation des medicaments deja presents dans les stocks de la pharamcie
+    	Medicament doli = new Medicament("Doliprane", 20);
     	listeMedoc[nbMedocs] = doli;
     	nbMedocs ++;
     	quantiteMeds = doli.getQuantite();
@@ -947,9 +961,92 @@ public class Main {
     	nbMedocs ++;
     	quantiteMeds = fuc.getQuantite();
     	
+    	//initialisation des patients deja presents dans l'hopital
     	
-    	Patient lisa = new Patient("Manoban", "Lalisa", 25, );
+    	Patient lisa;
+    	Medicament doliprane = new Medicament("Doliprane", 2);
+    	Medicament[] prescriptionL = {doliprane};
+    	lisa = new Patient("Manoban", "Lalisa", 25, prescriptionL);
+    	listePatient[nbPatients] = lisa;
+    	nbPatients ++;
     	
+    	Patient jisoo;
+    	Medicament fucidine = new Medicament("Fucidine", 1);
+    	Medicament[] prescriptionJ = {doliprane, fucidine};
+    	jisoo = new Patient("Kim", "Jisoo", 27, prescriptionJ);
+    	listePatient[nbPatients] = jisoo;
+    	nbPatients ++;
+    	
+    	Patient joe; 
+    	Medicament tahor = new Medicament("Tahor", 1);
+    	Medicament amlor = new Medicament("Amlor", 1);
+    	Medicament fraxiparine = new Medicament("Fraxiparine", 1);
+    	Medicament[] prescriptionJoe = {doliprane, tahor, amlor, fraxiparine};
+    	joe = new Patient("Hisaichi", "Joe", 72, prescriptionJoe);
+    	listePatient[nbPatients] = joe;
+    	nbPatients ++;
+    	
+    	Patient eiichi;
+    	Medicament spiriva = new Medicament("Sprivia", 1);
+    	Medicament vogalene = new Medicament("Vogalene", 3);
+    	Medicament contramal = new Medicament("Contramal", 2);
+    	Medicament[] prescriptionE = {doliprane, spiriva, vogalene, contramal};
+    	eiichi =  new Patient("Oda", "Eiichiro", 47 ,prescriptionE);
+    	listePatient[nbPatients] = eiichi;
+    	nbPatients ++;
+    	
+    	Patient emma;
+    	Medicament kardegic = new Medicament("Kardegic", 1);
+    	Medicament[] prescriptionEm = {doliprane, kardegic};
+    	emma = new Patient("Watson", "Emma", 32, prescriptionEm);
+    	listePatient[nbPatients] = emma;
+    	nbPatients ++;
+    	
+    	Patient jenna;
+    	Medicament[] prescriptionJenna = {doliprane};
+    	jenna = new Patient("Ortega", "Jenna", 20, prescriptionJenna);
+    	listePatient[nbPatients] = jenna;
+    	nbPatients ++;
+    	
+    	
+    	Patient jungkook;
+    	Medicament ketoprofene = new Medicament("Ketoprofene", 2);
+    	Medicament[] prescrptionKook = {doliprane, ketoprofene};
+    	jungkook = new Patient("Jeon", "Jungkook", 25, prescrptionKook);
+    	listePatient[nbPatients] = jungkook;
+    	nbPatients++;
+    	
+    	Patient elon;
+    	Medicament primperan = new Medicament("Primperan", 3);
+    	Medicament fragmin = new Medicament("Fragmin", 1);
+    	Medicament[] prescriptionElon = {doliprane, primperan, fragmin};
+    	elon = new Patient("Musk", "Elon", 51, prescriptionElon);
+    	listePatient[nbPatients] = elon;
+    	nbPatients++;
+    	
+    	Patient hans;
+    	Medicament domperidone = new Medicament("Domperidone", 3);
+    	Medicament levothyrox = new Medicament("Levothyrox", 1);
+    	Medicament smecta = new Medicament("Smecta", 3);
+    	Medicament[] prescriptionHans = {doliprane, domperidone, levothyrox, smecta};
+    	hans = new Patient("Zimmer", "Hans", 65, prescriptionHans);
+    	listePatient[nbPatients] = hans;
+    	nbPatients++;
+    	
+    	Patient jakub;
+    	Medicament[] prescriptionO = {doliprane};
+    	jakub = new Patient("Orlinski", "Jakub", 32, prescriptionO);
+    	listePatient[nbPatients] = jakub;
+    	nbPatients++;
+    	
+    	Patient alex;
+    	Medicament coumadine = new Medicament("Coumadine", 1);
+    	Medicament sterdex = new Medicament("Sterdex", 3);
+    	Medicament topalgic = new Medicament("Topalgic", 3);
+    	Medicament[] prescriptionD = {doliprane, coumadine, sterdex, topalgic};
+    	alex = new Patient("Desplat", "Alexandre", 61, prescriptionD);
+    	listePatient[nbPatients] = alex;
+    	nbPatients++;
     	
 		mainMenu();
 	}
