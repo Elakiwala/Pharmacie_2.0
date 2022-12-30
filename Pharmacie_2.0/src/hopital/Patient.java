@@ -17,6 +17,18 @@ public class Patient {
 		this.prescription = prescription;
 	}
 
+	public void setNom(String nom) {
+		this.nom = nom;
+	}
+
+	public void setPrenom(String prenom) {
+		this.prenom = prenom;
+	}
+
+	public void setAge(int age) {
+		this.age = age;
+	}
+
 	public Medicament[] getPrescription() {
 		return prescription;
 	}
