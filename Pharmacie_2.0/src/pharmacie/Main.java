@@ -33,7 +33,7 @@ public class Main {
 		try {
 			int userInput = Integer.parseInt(inputOutput("\nVeuillez saisir parmis l'un des chiffres ci-dessus:"));
 			
-			if(userInput >= 0 && userInput <= 2) {
+			if(userInput >= 0 && userInput <= 3) {
 				if(userInput == 1) {
 					menuAS();
 				}
@@ -44,14 +44,15 @@ public class Main {
 					menuMed();
 				}
 				if(userInput == 0) {
+					System.out.println("\nAu Revoir!!");
 					System.exit(0);
 				}
 			} else {
-				System.out.println("Merci de rentrer un chiffre entre 0 et 4");
+				System.out.println("Merci de rentrer un chiffre entre 0 et 3");
             	mainMenu();
 			}	
 		} catch (NumberFormatException e) {
-        	System.out.println("Merci de rentrer un chiffre de 0 à 4");
+        	System.out.println("Merci de rentrer un chiffre de 0 a 3");
         	mainMenu();
         }
 	}
@@ -77,15 +78,16 @@ public class Main {
 					mainMenu();
 				}
 				if(userInput == 0) {
+					System.out.println("\nAu Revoir!!");
 					System.exit(0);
 				}
 			} else {
-				System.out.println("Merci de rentrer un chiffre entre 0 et 4");
-            	mainMenu();
+				System.out.println("Merci de rentrer un chiffre entre 0 et 3");
+            	menuAS();
 			}
 		} catch (NumberFormatException e) {
-        	System.out.println("Merci de rentrer un chiffre de 0 à 3");
-        	mainMenu();
+        	System.out.println("Merci de rentrer un chiffre de 0 a 3");
+        	menuAS();
         }
 	}
 	
@@ -119,15 +121,16 @@ public class Main {
 					mainMenu();
 				}
 				if(userInput == 0) {
+					System.out.println("\nAu Revoir!!");
 					System.exit(0);
 				}
 			} else {
-				System.out.println("Merci de rentrer un chiffre entre 0 et 4");
-            	mainMenu();
+				System.out.println("Merci de rentrer un chiffre entre 0 et 5");
+            	menuInf();
 			}
 		} catch (NumberFormatException e) {
-        	System.out.println("Merci de rentrer un chiffre de 0 à 3");
-        	mainMenu();
+        	System.out.println("Merci de rentrer un chiffre de 0 a 5");
+        	menuInf();
         }
 	}
 	
@@ -157,15 +160,16 @@ public class Main {
 					mainMenu();
 				}
 				if(userInput == 0) {
+					System.out.println("\nAu Revoir!!");
 					System.exit(0);
 				}
 			} else {
 				System.out.println("Merci de rentrer un chiffre entre 0 et 4");
-            	mainMenu();
+            	menuMed();
 			}
 		} catch (NumberFormatException e) {
-        	System.out.println("Merci de rentrer un chiffre de 0 à 3");
-        	mainMenu();
+        	System.out.println("Merci de rentrer un chiffre de 0 a 4");
+        	menuMed();
         }
 	}
 	
@@ -181,19 +185,21 @@ public class Main {
 			if(userInput >= 0 && userInput <= 2) {
 				if(userInput == 1) {
 					faireSoins();
+					menuMed();
 				}
 				if(userInput == 2) {
 					menuMed();
 				}if(userInput == 0) {
+					System.out.println("\nAu Revoir!!");
 					System.exit(0);
 				}
 			} else {
-				System.out.println("Merci de rentrer un chiffre entre 0 et 4");
-            	mainMenu();
+				System.out.println("Merci de rentrer un chiffre entre 0 et 2");
+            	menuMed();
 			}
 		} catch (NumberFormatException e) {
-        	System.out.println("Merci de rentrer un chiffre de 0 à 3");
-        	mainMenu();
+        	System.out.println("Merci de rentrer un chiffre de 0 a 2");
+        	menuMed();
         }
 	}
 	
@@ -209,18 +215,20 @@ public class Main {
 			if(userInput >= 0 && userInput <= 2) {
 				if(userInput == 1) {
 					faireSoins();
+					menuInf();
 				}
 				if(userInput == 2) {
 					menuInf();
 				}if(userInput == 0) {
+					System.out.println("\nAu Revoir!!");
 					System.exit(0);
 				}
 			} else {
-				System.out.println("Merci de rentrer un chiffre entre 0 et 4");
+				System.out.println("Merci de rentrer un chiffre entre 0 et 2");
             	menuInf();
 			}
 		} catch (NumberFormatException e) {
-        	System.out.println("Merci de rentrer un chiffre de 0 à 3");
+        	System.out.println("Merci de rentrer un chiffre de 0 a 2");
         	menuInf();
         }	}
 	
@@ -236,18 +244,20 @@ public class Main {
 			if(userInput >= 0 && userInput <= 2) {
 				if(userInput == 1) {
 					faireSoins();
+					menuAS();
 				}
 				if(userInput == 2) {
 					menuAS();
 				}if(userInput == 0) {
+					System.out.println("\nAu Revoir!!");
 					System.exit(0);
 				}
 			} else {
-				System.out.println("Merci de rentrer un chiffre entre 0 et 4");
+				System.out.println("Merci de rentrer un chiffre entre 0 et 2");
             	menuAS();
 			}
 		} catch (NumberFormatException e) {
-        	System.out.println("Merci de rentrer un chiffre de 0 à 3");
+        	System.out.println("Merci de rentrer un chiffre de 0 a 2");
         	menuAS();
         }
 	}
@@ -262,34 +272,39 @@ public class Main {
 		System.out.println("\n0. Exit");
 		
 		try {
-			int userInput = Integer.parseInt(inputOutput("\\nVeuillez saisir parmis l'un des chiffres ci-dessus:"));
+			int userInput = Integer.parseInt(inputOutput("\nVeuillez saisir parmis l'un des chiffres ci-dessus:"));
 			
 			if(userInput >= 0 && userInput <= 5) {
 				if(userInput == 1) {
 					afficherPatients();
+					menuMed();
 				}
 				if(userInput == 2) {
 					addPatient();
+					menuMed();
 				}
 				if(userInput == 3) {
 					delPatient();
+					menuMed();
 				}
 				if(userInput == 4) {
 					editPatient();
+					menuMed();
 				}
 				if(userInput == 5) {
 					menuMed();
 				}
 				if(userInput == 0) {
+					System.out.println("\nAu Revoir!!");
 					System.exit(0);
 				}
 			} else {
-				System.out.println("Merci de rentrer un chiffre entre 0 et 4");
+				System.out.println("Merci de rentrer un chiffre entre 0 et 5");
             	menuMed();
 			}
 			
 		} catch (NumberFormatException e) {
-        	System.out.println("Merci de rentrer un chiffre de 0 à 3");
+        	System.out.println("Merci de rentrer un chiffre de 0 a 5");
         	menuMed();
         }
 	}
@@ -302,28 +317,31 @@ public class Main {
 		System.out.println("\n0. Exit");
 		
 		try {
-			int userInput = Integer.parseInt(inputOutput("\\nVeuillez saisir parmis l'un des chiffres ci-dessus:"));
+			int userInput = Integer.parseInt(inputOutput("\nVeuillez saisir parmis l'un des chiffres ci-dessus:"));
 			
-			if(userInput >= 0 && userInput <= 5) {
+			if(userInput >= 0 && userInput <= 3) {
 				if(userInput == 1) {
 					afficherPatients();
+					menuInf();
 				}
 				if(userInput == 2) {
 					editPatient();
+					menuInf();
 				}
 				if(userInput == 3) {
 					menuInf();
 				}
 				if(userInput == 0) {
+					System.out.println("\nAu Revoir!!");
 					System.exit(0);
 				}
 			} else {
-				System.out.println("Merci de rentrer un chiffre entre 0 et 4");
+				System.out.println("Merci de rentrer un chiffre entre 0 et 3");
             	menuInf();
 			}
 			
 		} catch (NumberFormatException e) {
-        	System.out.println("Merci de rentrer un chiffre de 0 à 3");
+        	System.out.println("Merci de rentrer un chiffre de 0 a 3");
         	menuInf();
         }
 	}
@@ -337,72 +355,26 @@ public class Main {
 		try {
 			int userInput = Integer.parseInt(inputOutput("\nVeuillez saisir parmis l'un des chiffres ci-dessus:"));
 			
-			if(userInput >= 0 && userInput <= 5) {
+			if(userInput >= 0 && userInput <= 2) {
 				if(userInput == 1) {
 					afficherPatients();
+					menuAS();
 				}
 				if(userInput == 2) {
 					menuAS();
 				}
 				if(userInput == 0) {
+					System.out.println("\nAu Revoir!!");
 					System.exit(0);
 				}
 			} else {
-				System.out.println("Merci de rentrer un chiffre entre 0 et 4");
+				System.out.println("Merci de rentrer un chiffre entre 0 et 2");
             	menuAS();
 			}
 			
 		} catch (NumberFormatException e) {
-        	System.out.println("Merci de rentrer un chiffre de 0 à 3");
+        	System.out.println("Merci de rentrer un chiffre de 0 a 2");
         	menuAS();
-        }
-	}
-
-	
-	public void menuCommande() {
-		System.out.println("\nQue voulez-vous faier?\n");
-		System.out.println("\n1. Afficher la commande");
-		System.out.println("\n2. Ajouter un medicament a la commande");
-		System.out.println("\n3. Supprimer un medicament a la commande");
-		System.out.println("\n4. Passer la commande");
-		System.out.println("\n5. Supprimer toute la commande");
-		System.out.println("\n6. Retour au menu precedent");
-		System.out.println("\n0. Exit");
-		
-		try {
-			
-			int userInput = Integer.parseInt(inputOutput("\nVeuillez saisir parmis l'un des chiffres ci-dessus:"));
-			
-			if(userInput >= 0 && userInput <= 6) {
-				if(userInput == 1) {
-					afficherCommande();
-				}
-				if(userInput == 2) {
-					add1ToCommande();
-				}
-				if(userInput == 3) {
-					del1FromCommande();
-				}
-				if(userInput == 4) {
-					makeCommande();
-				}
-				if(userInput == 5) {
-					delAllCommande();
-				}
-				if(userInput == 6) {
-					menuMed();
-				}
-				if(userInput == 0) {
-					System.exit(0);
-				}
-			}else {
-				System.out.println("Merci de rentrer un chiffre entre 0 et 4");
-            	mainMenu();
-			}
-			
-		} catch (NumberFormatException e) {
-        	System.out.println("Merci de rentrer un chiffre de 0 à 3");
-        	mainMenu();
         }
 	}
 	
@@ -423,38 +395,44 @@ public class Main {
 			if(userInput >= 0 && userInput <= 6) {
 				if(userInput == 1) {
 					afficherCommande();
+					menuInf();
 				}
 				if(userInput == 2) {
 					add1ToCommande();
+					menuInf();
 				}
 				if(userInput == 3) {
 					del1FromCommande();
+					menuInf();
 				}
 				if(userInput == 4) {
 					makeCommande();
+					menuInf();
 				}
 				if(userInput == 5) {
 					delAllCommande();
+					menuInf();
 				}
 				if(userInput == 6) {
 					menuInf();
 				}
 				if(userInput == 0) {
+					System.out.println("\nAu Revoir!!");
 					System.exit(0);
 				}
 			}else {
-				System.out.println("Merci de rentrer un chiffre entre 0 et 4");
+				System.out.println("Merci de rentrer un chiffre entre 0 et 6");
             	menuInf();
 			}
 			
 		} catch (NumberFormatException e) {
-        	System.out.println("Merci de rentrer un chiffre de 0 à 3");
+        	System.out.println("Merci de rentrer un chiffre de 0 a 6");
         	menuInf();
         }
 	}
 	
 	public static void menuPharmacie() {
-		System.out.println("\nSue voulez-vous faire?\n");
+		System.out.println("\nQue voulez-vous faire?\n");
 		System.out.println("\n1. Afficher le stock de medicament dans la pharmacie");
 		System.out.println("\n2. Ajouter un ou plusieurs medicament(s) dans la pharmacie");
 		System.out.println("\n3. Supprimer un ou plusieurs medicament(s) de la pharmacie");
@@ -467,17 +445,22 @@ public class Main {
 			if(userInput >= 0 && userInput <= 4) {
 				if(userInput == 1) {
 					afficherStock();
+					menuMed();
 				}
 				if(userInput == 2) {
 					addMeds();
+					menuMed();
 				}
 				if(userInput == 3) {
 					delMeds();
+					menuMed();
 				}
 				if(userInput == 4) {
 					menuMed();
+					menuMed();
 				}
 				if(userInput == 0) {
+					System.out.println("\nAu Revoir!!");
 					System.exit(0);
 				}
 			} else {
@@ -485,7 +468,7 @@ public class Main {
             	menuMed();
 			}
 		} catch (NumberFormatException e) {
-        	System.out.println("Merci de rentrer un chiffre de 0 à 3");
+        	System.out.println("Merci de rentrer un chiffre de 0 a 4");
         	menuMed();
         }
 		
@@ -505,17 +488,21 @@ public class Main {
 			if(userInput >= 0 && userInput <= 4) {
 				if(userInput == 1) {
 					afficherStock();
+					menuInf();
 				}
 				if(userInput == 2) {
 					addMeds();
+					menuInf();
 				}
 				if(userInput == 3) {
 					delMeds();
+					menuInf();
 				}
 				if(userInput == 4) {
 					menuInf();
 				}
 				if(userInput == 0) {
+					System.out.println("\nAu Revoir!!");
 					System.exit(0);
 				}
 			} else {
@@ -523,7 +510,7 @@ public class Main {
             	menuInf();
 			}
 		} catch (NumberFormatException e) {
-        	System.out.println("Merci de rentrer un chiffre de 0 à 3");
+        	System.out.println("Merci de rentrer un chiffre de 0 a 4");
         	menuInf();
         }
 		
@@ -557,7 +544,6 @@ public class Main {
 			}
 		} if(find == 0) {
 			System.out.println("\n Le patient n'est pas dans la liste de cet hopital");
-			//retour a un menu
 		}
 	}
 	
@@ -601,21 +587,18 @@ public class Main {
 								commande[i].setQuantite(commande[i].getQuantite() - quantite);
 							}
 						}
-						if(userInput == 0) {
+						if(userInput == 2) {
 							System.out.println("\nMedicaments comservé dans la commande");
 						}
 					} else {
 						System.out.println("Merci de rentrer un chiffre entre 0 et 4");
-		            	//menu de quelque chose
 					}
 				} catch (NumberFormatException e) {
 		        	System.out.println("Merci de rentrer un chiffre de 0 à 3");
-		        	//menu de quelque chose
 		        }
 			}
 		} if(find == 0) {
 			System.out.println("\n Le patient n'est pas dans la liste de cet hopital");
-			//retour a un menu
 		}
 	}
 	
@@ -627,7 +610,10 @@ public class Main {
 			nbMedocs++;
 		}
 		System.out.println("\nLa pharmacie est remplie!!!");
-		delAllCommande();
+		//suppression de la commande
+		for(int i = 0; i<nbMedocCommande; i++) {
+			commande[i] = null;
+		}
 	}
 	
 	public static void delAllCommande() {
@@ -639,22 +625,20 @@ public class Main {
 			int userInput = Integer.parseInt(inputOutput("\nSaisissez votre reponse:\n"));
 			
 			if(userInput >= 0 && userInput <= 1) {
-				if(userInput == 0) {
+				if(userInput == 1) {
 					System.out.println("\nSuppression des commandes");
 					for(int i = 0; i<nbMedocCommande; i++) {
 						commande[i] = null;
 					}
 				}
-				if(userInput == 1) {
+				if(userInput == 2) {
 					System.out.println("\nMaintient de la commande");
 				}
 			} else {
 				System.out.println("Merci de rentrer un chiffre entre 0 et 4");
-            	//menu de quelque chose
 			}
 		} catch (NumberFormatException e) {
         	System.out.println("Merci de rentrer un chiffre de 0 à 3");
-        	//menu de quelque chose
         }
 	}
 	
@@ -731,16 +715,13 @@ public class Main {
 						}
 					} else {
 						System.out.println("Merci de rentrer un chiffre entre 0 et 4");
-		            	//menu de quelque chose
 					}
 				} catch (NumberFormatException e) {
 		        	System.out.println("Merci de rentrer un chiffre de 0 à 3");
-		        	//menu de quelque chose
 		        }
 			}
 		} if(find == 0) {
 			System.out.println("\nPatient introuvable dans la liste");
-			//retour a un menu
 		}
 	}
 	
@@ -765,7 +746,7 @@ public class Main {
 							listePatient[i].setNom(name);
 						}
 						if(userInput == 2) {
-							String prenom = inputOutput("\nSaisissez le noouveau prenom du patient");
+							String prenom = inputOutput("\nSaisissez le nouveau prenom du patient");
 							listePatient[i].setPrenom(prenom);
 						}
 						if(userInput == 3) {
@@ -785,18 +766,14 @@ public class Main {
 						}
 					} else {
 						System.out.println("Merci de rentrer un chiffre entre 0 et 4");
-		            	//menu de quelque chose
 					}
 				} catch (NumberFormatException e) {
 		        	System.out.println("Merci de rentrer un chiffre de 0 à 3");
-		        	//menu de quelque chose
 		        }
 			}
 		} if(find == 0) {
 			System.out.println("\nPatient introuvable dans la liste");
-			//retour a un menu
 		}
-	
 	}
 	
 	public static void afficherStock() {
@@ -839,16 +816,13 @@ public class Main {
 						}
 					} else {
 						System.out.println("Merci de rentrer un chiffre entre 0 et 4");
-		            	//menu de quelque chose
 					}
 				} catch (NumberFormatException e) {
 		        	System.out.println("Merci de rentrer un chiffre de 0 à 3");
-		        	//menu de quelque chose
 		        }
 			}
 		} if(find == 0) {
 			System.out.println("\nMedicament introuvable dans la liste");
-			//retour a un menu
 		}
 	}
 	
@@ -873,6 +847,110 @@ public class Main {
     }
     
     public static void main(String[] args) {
+    	Medicament doli = new Medicament("Dolipriane", 20);
+    	listeMedoc[nbMedocs] = doli;
+    	nbMedocs ++;
+    	quantiteMeds = doli.getQuantite();
+    	
+    	Medicament karde = new Medicament("Kardegic", 10);
+    	listeMedoc[nbMedocs] = karde;
+    	nbMedocs ++;
+    	quantiteMeds = karde.getQuantite();
+    	
+    	Medicament keto = new Medicament("Ketoprofene", 12);
+    	listeMedoc[nbMedocs] = keto;
+    	nbMedocs ++;
+    	quantiteMeds = keto.getQuantite();
+    	
+    	Medicament contra = new Medicament("Contramal", 17);
+    	listeMedoc[nbMedocs] = contra;
+    	nbMedocs ++;
+    	quantiteMeds = contra.getQuantite();
+    	
+    	Medicament vog = new Medicament("Vogalene", 8);
+    	listeMedoc[nbMedocs] = vog;
+    	nbMedocs ++;
+    	quantiteMeds = vog.getQuantite();
+    	
+    	Medicament primp = new Medicament("Primperan", 2);
+    	listeMedoc[nbMedocs] = primp;
+    	nbMedocs ++;
+    	quantiteMeds = primp.getQuantite();
+    	
+    	Medicament spir = new Medicament("Spiriva", 13);
+    	listeMedoc[nbMedocs] = spir;
+    	nbMedocs ++;
+    	quantiteMeds = spir.getQuantite();
+    	
+    	Medicament frag = new Medicament("Fragmin", 16);
+    	listeMedoc[nbMedocs] = frag;
+    	nbMedocs ++;
+    	quantiteMeds = frag.getQuantite();
+    	
+    	Medicament frax = new Medicament("Fraxiparine", 4);
+    	listeMedoc[nbMedocs] = frax;
+    	nbMedocs ++;
+    	quantiteMeds = frax.getQuantite();
+    	
+    	Medicament dompe = new Medicament("Domperidone", 9);
+    	listeMedoc[nbMedocs] = dompe;
+    	nbMedocs ++;
+    	quantiteMeds = dompe.getQuantite();
+    	
+    	Medicament levo = new Medicament("Levothyrox", 18);
+    	listeMedoc[nbMedocs] = levo;
+    	nbMedocs ++;
+    	quantiteMeds = levo.getQuantite();
+    	
+    	Medicament smec = new Medicament("Smecta", 14);
+    	listeMedoc[nbMedocs] = smec;
+    	nbMedocs ++;
+    	quantiteMeds = smec.getQuantite();
+    	
+    	Medicament modo = new Medicament("Modopar", 7);
+    	listeMedoc[nbMedocs] = modo;
+    	nbMedocs ++;
+    	quantiteMeds = modo.getQuantite();
+    	
+    	Medicament amlo = new Medicament("Amlor", 15);
+    	listeMedoc[nbMedocs] = amlo;
+    	nbMedocs ++;
+    	quantiteMeds = amlo.getQuantite();
+    	
+    	Medicament coum = new Medicament("Coumadine", 19);
+    	listeMedoc[nbMedocs] = coum;
+    	nbMedocs ++;
+    	quantiteMeds = coum.getQuantite();
+    	
+    	Medicament ster = new Medicament("Sterdex", 6);
+    	listeMedoc[nbMedocs] = ster;
+    	nbMedocs ++;
+    	quantiteMeds = ster.getQuantite();
+    	
+    	Medicament top = new Medicament("Topalgic", 5);
+    	listeMedoc[nbMedocs] = top;
+    	nbMedocs ++;
+    	quantiteMeds = top.getQuantite();
+    	
+    	Medicament temer = new Medicament("Temerite", 3);
+    	listeMedoc[nbMedocs] = temer;
+    	nbMedocs ++;
+    	quantiteMeds = temer.getQuantite();
+    	
+    	Medicament tah = new Medicament("Tahor", 11);
+    	listeMedoc[nbMedocs] = tah;
+    	nbMedocs ++;
+    	quantiteMeds = tah.getQuantite();
+    	
+    	Medicament fuc = new Medicament("Fucidine", 2);
+    	listeMedoc[nbMedocs] = fuc;
+    	nbMedocs ++;
+    	quantiteMeds = fuc.getQuantite();
+    	
+    	
+    	Patient lisa = new Patient("Manoban", "Lalisa", 25, );
+    	
+    	
 		mainMenu();
 	}
 }

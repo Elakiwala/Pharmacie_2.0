@@ -6,7 +6,7 @@ public class Patient {
 	private String nom;
 	private String prenom;
 	private int age;
-	private Medicament[] prescription = new Medicament[20];
+	private Medicament[] prescription = new Medicament[50];
 	private int nbMedoc = 0;
 	
 	
